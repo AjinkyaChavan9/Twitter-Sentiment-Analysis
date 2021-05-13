@@ -3,7 +3,6 @@ import twint
 import pandas as pd
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-import plotly.express as px
 import preprocess
 import VADER
 import TextBlobModel
