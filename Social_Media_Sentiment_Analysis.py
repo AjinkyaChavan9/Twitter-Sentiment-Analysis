@@ -15,7 +15,13 @@ import NaiveBayes
 def Visualize(model):
 	df = pd.read_csv(model + '_Sentiments.csv')
 	graph, ax = plt.subplots()
-	ax.hist(df['Polarity'], align='right')
+	d = df['Polarity'].value_counts()
+	d = d.sort_index(ascending=False)
+	ax = d.plot.bar(x='Polarity', rot=0)
+	for p in ax.patches:
+		ax.annotate(np.round(p.get_height(),decimals=2),
+             			    (p.get_x()+p.get_width()/2., p.get_height()), 
+                                     ha='center', va='center', xytext=(0, 10), textcoords='offset points')
 	st.pyplot(graph)
 	if(model == 'TextBlob'):
 		fig1, ax = plt.subplots(figsize=(8,6)) 
