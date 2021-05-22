@@ -1,6 +1,7 @@
 import streamlit as st
 import twint
 import pandas as pd
+import numpy as np
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import preprocess
