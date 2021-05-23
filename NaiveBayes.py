@@ -13,6 +13,7 @@ def getAnalysisNB(score):
 
 def predict_sentiment_NB(search_term):
 	df1 = pd.read_csv('preprocessed_' + search_term + '_tweets_data.csv', error_bad_lines=False, engine='python', encoding = 'utf8')
+	df1 = df1.dropna(subset=['preprocesstweet'])
 	df1['Polarity_Score'] = NB.predict(df1['preprocesstweet'])
 	df1['Polarity'] = df1['Polarity_Score'].apply(getAnalysisNB)
 	new_df = df1[['tweet', 'Polarity']]
