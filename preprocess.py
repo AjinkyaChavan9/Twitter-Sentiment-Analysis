@@ -6,7 +6,7 @@ import re
 
 
 def preprocess_function(search_term):
-	df = pd.read_csv(search_term + '_tweets_data.csv')
+	df = pd.read_csv(search_term + '_tweets_data.csv', error_bad_lines=False, engine='python', encoding = 'utf8')
 	# defining preprocess function for each row
 	def preprocess_tweet(row):
 		text = row['tweet']
