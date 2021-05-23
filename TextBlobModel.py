@@ -20,8 +20,8 @@ def getAnalysisTextBlob(score):
 def predict_sentiment_TextBlob(search_term):
 	df1 = pd.read_csv('preprocessed_' + search_term + '_tweets_data.csv', error_bad_lines=False, engine='python', encoding = 'utf8')
 	# Create two new columns 'Subjectivity' & 'Polarity_Score'
-	df1['Subjectivity'] = df1['preprocesstweet'].apply(getSubjectivity)
-	df1['Polarity_Score'] = df1['preprocesstweet'].apply(getPolarity)
+	df1['Subjectivity'] = df1['preprocesstweet'].dropna().apply(getSubjectivity)
+	df1['Polarity_Score'] = df1['preprocesstweet'].dropna().apply(getPolarity)
 	df1['Polarity'] = df1['Polarity_Score'].apply(getAnalysisTextBlob)
 	new_df = df1[['tweet', 'Polarity', 'Subjectivity','Polarity_Score']]
 	new_df.to_csv('TextBlob_Sentiments.csv', index = False)
