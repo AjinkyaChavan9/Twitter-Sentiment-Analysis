@@ -22,7 +22,7 @@ def Polarity(score):
 def predict_sentiment_VADER(search_term):
 	df1 = pd.read_csv('preprocessed_' + search_term + '_tweets_data.csv', encoding = 'utf8')
 	df1['scores'] = df1['preprocesstweet'].dropna().apply(lambda Text: VaderSentimentAnalyzer.polarity_scores(Text))
-	df1['compound']  = df1['scores'].apply(lambda score_dict: score_dict['compound'])
+	df1['compound']  = df1['scores'].dropna().apply(lambda score_dict: score_dict['compound'])
 	df1 = df1[['tweet','preprocesstweet', 'scores', 'compound']]
 	df1['Polarity'] = df1['compound'].apply(getAnalysis)
 	df1['Polarity_Score'] = df1['Polarity'].apply(Polarity)
