@@ -89,7 +89,7 @@ c.Output = search_term + '_tweets_data.csv'
 if st.button("Generate Dataset"):
 	#Run Twint
 	twint.run.Search(c)
-	df = pd.read_csv(search_term + '_tweets_data.csv', error_bad_lines=False, engine='python')
+	df = pd.read_csv(search_term + '_tweets_data.csv', error_bad_lines=False, engine='python', encoding = 'utf8')
 	st.success('Tweets Dataset Generated Successfully!')
 	preprocess.preprocess_function(search_term)
 
