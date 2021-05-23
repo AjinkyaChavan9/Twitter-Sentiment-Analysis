@@ -32,13 +32,13 @@ def preprocess_function(search_term):
 	#Convert word numbers to digit
 	df['preprocesstweet'] = df['preprocesstweet'].apply(lambda row: wordtodigits.convert(row))
 	#removing digit numbers
-	df['preprocesstweet'] = df['preprocesstweet'].str.replace(r'\d+','')
+	df['preprocesstweet'] = df['preprocesstweet'].str.replace(r'\d+','', regex=True)
 
 	#Removing punctuation marks with python RegEx(Regular Expression) 
 	# [] - A set of characters
 	# \w - Returns a match where the string contains any word characters (characters from a to Z, digits from 0-9, and the underscore _ character)
 	# \s - Returns a match where the string contains a white space character
-	df['preprocesstweet'] = df['preprocesstweet'].str.replace('[^\w\s]','') 
+	df['preprocesstweet'] = df['preprocesstweet'].str.replace('[^\w\s]','', regex=True) 
 
 	#df = df['preprocesstweet'] 
 	#df = df.to_frame()
