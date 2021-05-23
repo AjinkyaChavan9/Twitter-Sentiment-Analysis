@@ -43,6 +43,7 @@ def preprocess_function(search_term):
 	#df = df['preprocesstweet'] 
 	#df = df.to_frame()
 	df = df[df['preprocesstweet'].str.strip().astype(bool)]
+	df = df.dropna(subset=['preprocesstweet'])
 	df.to_csv('preprocessed_' + search_term + '_tweets_data.csv', index = False)
 
 
