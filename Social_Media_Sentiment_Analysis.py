@@ -14,7 +14,7 @@ import NaiveBayes
 
 
 def Visualize(model):
-	df = pd.read_csv(model + '_Sentiments.csv')
+	df = pd.read_csv(model + '_Sentiments.csv', error_bad_lines=False, engine='python', encoding = 'utf8')
 	graph, ax = plt.subplots()
 	d = df['Polarity'].value_counts()
 	d = d.sort_index(ascending=False)
