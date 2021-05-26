@@ -35,6 +35,7 @@ def Visualize(model):
 
 	# word cloud visualization
 	plt.style.use('fivethirtyeight')
+	df = df.dropna(subset=['tweet'])
 	allWords = ' '.join([twts for twts in df['tweet']])
 	wordCloud = WordCloud(width=1000, height=500, random_state=21, max_font_size=110).generate(allWords)
 	plt.imshow(wordCloud, interpolation="bilinear")
