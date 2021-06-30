@@ -69,7 +69,7 @@ Title_html = """
     </style> 
     
     <div class="title">
-        <h1>Social Media Sentiment Analysis</h1>
+        <h1>Twitter Sentiment Analysis</h1>
     </div>
     """
 st.markdown(Title_html, unsafe_allow_html=True) #Title rendering
