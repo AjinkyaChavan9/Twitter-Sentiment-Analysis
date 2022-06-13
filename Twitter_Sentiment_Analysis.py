@@ -45,6 +45,18 @@ def Visualize(model):
 
 	st.dataframe(df)
 	
+st.sidebar.title("About")
+st.sidebar.info(
+    "Web App that Extracts latest Tweets based on Input **Search Term** & Performs Sentiment Analysis on the extracted tweets\n\n"
+    "This app is created and maintained by [Ajinkya Chavan](https://github.com/AjinkyaChavan9)\n\n"
+    "Check the [Source Code] (https://github.com/AjinkyaChavan9/Twitter-Sentiment-Analysis)"
+)
+
+st.sidebar.title("Contribute")
+st.sidebar.info(
+	"You are very **Welcome** to contribute your awesome comments, questions or suggestions as [issues](https://github.com/AjinkyaChavan9/Twitter-Sentiment-Analysis/issues) "
+	"or [pull requests](https://github.com/AjinkyaChavan9/Twitter-Sentiment-Analysis/pulls) to the [source code](https://github.com/AjinkyaChavan9/Twitter-Sentiment-Analysis)"
+)
 
 Title_html = """
     <style>
