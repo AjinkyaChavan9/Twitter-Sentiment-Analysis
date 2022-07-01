@@ -88,7 +88,7 @@ st.markdown(Title_html, unsafe_allow_html=True) #Title rendering
 
 ## User Input
 search_term = st.text_input("Enter Search Term to Analyze Tweets:")
-no_of_tweets = st.text_input("Enter Number of Tweets:")
+no_of_tweets = st.number_input("Enter Number of Tweets:",  value=500)
 
 # Configure Twint
 c = twint.Config()
