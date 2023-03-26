@@ -7,7 +7,7 @@ scikit-learn==0.22.2
 streamlit==0.79.0
 textblob==0.15.3
 tweet-preprocessor==0.6.0
-git+git://github.com/ajctrl/twint@patch-1
+git+https://github.com/ajctrl/twint@patch-1
 vaderSentiment==3.3.2
 wordcloud==1.8.1
 wordtodigits==1.0.2
